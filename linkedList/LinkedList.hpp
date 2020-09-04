@@ -34,7 +34,19 @@ int LinkedList<T>::size() const
 template <typename T>
 bool LinkedList<T>::search(T value) const
 {
-	//broken
+	Node<T> *temp = m_front;
+		bool isFound = false;
+		for (int i = 1; i <= m_size; i++)
+		{
+			if (temp->getValue() == value)
+			{
+				isFound = true;
+				return (isFound);
+			}
+			temp = temp->getNext();
+		}
+		return (isFound);
+
 }
 
 template <typename T>
@@ -87,7 +99,7 @@ void LinkedList<T>::addFront(T value)
 template <typename T>
 bool LinkedList<T>::removeBack()
 {
-//broken	
+//broken
 }
 
 template <typename T>
